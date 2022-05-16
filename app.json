@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Стол 5",
+    "slug": "stol-5",
+    "version": "1.0.21",
+    "assetBundlePatterns": ["**/*"],
+    "icon": "./assets/adaptive-icon-a.png",
+    "ios": {
+      "bundleIdentifier": "table5-app",
+      "supportsTablet": true
+    },
+    "android": {
+      "googleServicesFile": "./google-services.json",
+      "package": "com.hold_fast.table5",
+      "useNextNotificationsApi": true
+    }
+  },
+  "permissions": ["RECEIVE_BOOT_COMPLETED"],
+  "name": "stol-5"
+}
