@@ -25,7 +25,7 @@ const Drawers = ({ isLoadedData }) => {
     >
       <>
         <Drawer.Screen
-          options={{}}
+          // options={{}}
           options={{
             headerShown: false,
           }}
