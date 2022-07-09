@@ -41,10 +41,11 @@ const ArticlePage = ({
   }
 
   const test = () => {
-    console.log('curArticle?.content', curArticle?.content);
+    // console.log('curArticle?.content', curArticle?.content);
   };
 
-  console.log('7777-', imgPath, curArticle)
+  console.log('7777-', curArticle.content.replace(/src="/g, `src="${imgPath}`).replace('https://vseopecheni.ru/https://www.youtube.com/', `https://www.youtube.com/`))
+  // console.log('7777-', curArticle.content)
 
   return (
     <>
@@ -82,8 +83,10 @@ const ArticlePage = ({
 
           <WebView
             onShouldStartLoadWithRequest={(event) => {
+              console.log('nnn-', event.url);
               const isExternalLink =
                 Platform.OS === 'ios' ? event.navigationType === 'click' : true;
+                console.log('nnn-', event.url)
               if (event.url.slice(0, 4) === 'http' && isExternalLink) {
                 Linking.canOpenURL(event.url).then(supported => {
                   if (supported) {
@@ -91,7 +94,7 @@ const ArticlePage = ({
                   }
                 });
                 return false;
-              } else if (event.url.slice(0, 11) !== 'about:blank' && isExternalLink) {
+              } else if (event.url.slice(0, 11) !== 'about:blank' && isExternalLink && event.url.slice(0, 23) !== 'https://www.youtube.com') {
                 Linking.canOpenURL('https://vseopecheni.ru' + event.url).then(supported => {
                   if (supported) {
                     Linking.openURL('https://vseopecheni.ru' + event.url);
@@ -136,7 +139,7 @@ const ArticlePage = ({
               html: `<html><head><meta name="viewport" content="width=device-width, initial-scale=1.0">
               </head>
                 <body>
-                  ${curArticle.content.replace(/src="/g, `src="${imgPath}`)}
+                  ${curArticle.content.replace(/src="/g, `src="${imgPath}`).replace('https://vseopecheni.ru/https://www.youtube.com/', `https://www.youtube.com/`)}
                 </body>
               </html>`,
             }}
