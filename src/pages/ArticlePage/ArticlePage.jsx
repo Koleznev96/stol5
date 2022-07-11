@@ -44,7 +44,7 @@ const ArticlePage = ({
     // console.log('curArticle?.content', curArticle?.content);
   };
 
-  console.log('7777-', curArticle.content.replace(/src="/g, `src="${imgPath}`).replace('https://vseopecheni.ru/https://www.youtube.com/', `https://www.youtube.com/`))
+  // console.log('7777-', curArticle.content.replace(/src="/g, `src="${imgPath}`).replace('https://vseopecheni.ru/https://www.youtube.com/', `https://www.youtube.com/`))
   // console.log('7777-', curArticle.content)
 
   return (
