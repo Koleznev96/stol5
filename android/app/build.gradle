@@ -162,8 +162,8 @@ android {
         applicationId "ru.vseopecheni.com"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 409 // Update version 09/07/22
-        versionName "4.0.9" // Update version 09/07/22
+        versionCode 410 // Update version 11/07/22
+        versionName "4.1.0" // Update version 11/07/22
     }
     splits {
         abi {
