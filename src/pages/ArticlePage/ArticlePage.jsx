@@ -44,7 +44,7 @@ const ArticlePage = ({
     // console.log('curArticle?.content', curArticle?.content);
   };
 
-  // console.log('7777-', curArticle.content.replace(/src="/g, `src="${imgPath}`).replace('https://vseopecheni.ru/https://www.youtube.com/', `https://www.youtube.com/`))
+  // console.log('7777-', curArticle.content.replace(/src="/g, `src="${imgPath}`).replace(/https:\/\/vseopecheni.ru\/https:\/\/www.youtube.com\//g, `https://www.youtube.com/`).replace(/href="\//g, `href="${imgPath}/`))
   // console.log('7777-', curArticle.content)
 
   return (
@@ -86,20 +86,22 @@ const ArticlePage = ({
               console.log('nnn-', event.url);
               const isExternalLink =
                 Platform.OS === 'ios' ? event.navigationType === 'click' : true;
-                console.log('nnn-', event.url)
+                console.log('nnn-', event, isExternalLink)
               if (event.url.slice(0, 4) === 'http' && isExternalLink) {
-                Linking.canOpenURL(event.url).then(supported => {
-                  if (supported) {
+                // Linking.canOpenURL(event.url).then(supported => {
+                //   console.log('111-', supported)
+                //   if (supported) {
                     Linking.openURL(event.url);
-                  }
-                });
+                //   }
+                // });
                 return false;
               } else if (event.url.slice(0, 11) !== 'about:blank' && isExternalLink && event.url.slice(0, 23) !== 'https://www.youtube.com') {
-                Linking.canOpenURL('https://vseopecheni.ru' + event.url).then(supported => {
-                  if (supported) {
+                // Linking.canOpenURL('https://vseopecheni.ru' + event.url).then(supported => {
+                //   if (supported) {
                     Linking.openURL('https://vseopecheni.ru' + event.url);
-                  }
-                });
+                //   }
+                // });
+                // return false;
               }
               return true;
 
@@ -139,7 +141,7 @@ const ArticlePage = ({
               html: `<html><head><meta name="viewport" content="width=device-width, initial-scale=1.0">
               </head>
                 <body>
-                  ${curArticle.content.replace(/src="/g, `src="${imgPath}`).replace('https://vseopecheni.ru/https://www.youtube.com/', `https://www.youtube.com/`)}
+                  ${curArticle.content.replace(/src="/g, `src="${imgPath}`).replace(/https:\/\/vseopecheni.ru\/https:\/\/www.youtube.com\//g, `https://www.youtube.com/`).replace(/href="\//g, `href="${imgPath}/`)}
                 </body>
               </html>`,
             }}
