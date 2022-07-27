@@ -298,7 +298,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 407;
+				CURRENT_PROJECT_VERSION = 408;
 				DEVELOPMENT_TEAM = 4K6Q9V2Y78;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -308,7 +308,7 @@
 				INFOPLIST_FILE = stol5/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 4.0.7;
+				MARKETING_VERSION = 4.0.8;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -329,12 +329,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 407;
+				CURRENT_PROJECT_VERSION = 408;
 				DEVELOPMENT_TEAM = 4K6Q9V2Y78;
 				INFOPLIST_FILE = stol5/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 4.0.7;
+				MARKETING_VERSION = 4.0.8;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
